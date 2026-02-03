@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnUVdYoo_BG8u0MfdXGxKjjdCIxILMVDzJJw&s");
+   background-size: cover;
+   display: flex;
+   justify-content: center;
+}
+.card{
+    background-color: #B48291;
+    margin: 10px 60px;
+    padding: 10px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.img-container{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.img-container img{
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    border:7px solid #cb2547;
+}
+.control-btns{
+    margin: 10px 20px;
+    padding: 20px 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.control-btns button{
+    padding: 10px 15px;
+    border: none;
+    border-radius:50% ;
+    font-size: larger;
+    color: #cb2547;
+    box-shadow:2px 0 #d80c31 1.5;
+}
+#progress{
+    -webkit-appearance:none ;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+     
+    width: 80%;
+    height: 7px;
+    background: #cb2547
+    
+}
+#progress::-webkit-slider-thumb{
+    -webkit-appearance:none ;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    background: #cb2547;
+}
