@@ -2,33 +2,35 @@ let naat=document.getElementById("naat")
 let progress=document.getElementById("progress")
 let ctrlIcon=document.getElementById("controls")
 
-naat.onloadedmetadata=function(){
-    progress.max=progress.duration;
-    progress.value=naat.currentTime;
+naat.onloadedmetadata=()=>{
+   progress.max=naat.duration;
+   progress.value=naat.currentTime
 }
 let interval;
-
-ctrlIcon.addEventListener("click", () => {
-  if (naat.paused) {
+ctrlIcon.addEventListener("click",()=>{
+  if(naat.paused){
     naat.play();
-    ctrlIcon.classList.remove("fa-play");
-    ctrlIcon.classList.add("fa-pause");
+    ctrlIcon.classList.remove("fa-play")
+    ctrlIcon.classList.add("fa-pause")
 
-    interval = setInterval(() => {
-      progress.value = naat.currentTime;
-    }, 10000);
-  } else {
+    interval=setInterval(()=>{
+   progress.value=naat.currentTime;
+  },500)
+
+  }else{
     naat.pause();
-    ctrlIcon.classList.remove("fa-pause");
-    ctrlIcon.classList.add("fa-play");
-    clearInterval(interval);
+    ctrlIcon.classList.add("fa-play")
+    ctrlIcon.classList.remove("fa-pause")
+    clearInterval(interval)
   }
-});
+ 
+  
+
+})
 
 progress.addEventListener("change",()=>{
-    naat.play();
-    naat.currentTime=progress.value;
-    ctrlIcon.classList.remove("fa-play");
-    ctrlIcon.classList.add("fa-pause");
-
+  naat.play();
+  naat.currentTime=progress.value;
+   ctrlIcon.classList.remove("fa-play");
+   ctrlIcon.classList.add("fa-pause");
 })
